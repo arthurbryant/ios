@@ -7,16 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Rectangle.h"
+#import "Square.h"
 
 int main(int argc, const char * argv[])
 {
 
     @autoreleasepool {
-        
-        // insert code here...
-        NSLog(@"Hello, World!");
-        
-    }
+        Rectangle *rect1 = [[Rectangle alloc] init];
+        Rectangle *rect2 = [[Rectangle alloc] init];
+
+        rect1.width = 10;
+        rect1.height = 20;
+
+        rect2.width = 20;
+        rect2.height = 30;
+        NSLog(@"compare = %i", [rect1 compare:rect2]);
+
+        Square *s = [[Square alloc] init];
+        [s setSide:9];
+        NSLog(@"square side = %i, area = %i", [s side], [s area]);
+        }
     return 0;
 }
 
